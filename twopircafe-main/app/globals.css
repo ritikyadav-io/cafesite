@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F5EDD6;
+  --espresso: #2C1810;
+  --terracotta: #C4622D;
+  --sage: #7A9E7E;
+  --chalk: #FAFAF5;
+  --gold: #D4A843;
+  --ink: #1A1A2E;
+
+  --background: var(--cream);
+  --foreground: var(--espresso);
+}
+
+/* Custom Selection style */
+::selection {
+  background-color: var(--terracotta);
+  color: var(--chalk);
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--espresso);
+  border-radius: 5px;
+  border: 2px solid var(--cream);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
+
+/* Background grid motif - reinforces Wes Anderson meets IIT math grids */
+.math-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(44, 24, 16, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 24, 16, 0.04) 1px, transparent 1px);
+}
+
+/* Dot grid motif */
+.dot-grid {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(44, 24, 16, 0.08) 1px, transparent 1px);
+}
+
+/* Dark mode overrides (for the Basement Bar section specifically) */
+.dark-bar {
+  --background: var(--ink);
+  --foreground: var(--chalk);
+}
+
+/* Polaroids shadow & tilt */
+.polaroid {
+  background: var(--chalk);
+  padding: 12px 12px 24px 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(44, 24, 16, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.polaroid:hover {
+  transform: translateY(-8px) scale(1.02) rotate(1deg);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  border-color: var(--terracotta);
+}
+
+/* === GLOBAL RESET FOR MOBILE === */
+@media (max-width: 767px) {
+  /* Prevent any horizontal overflow on entire page */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Every element respects the viewport */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* No element can overflow its parent */
+  img, video, iframe, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Section padding: compact for mobile */
+  section {
+    padding: 24px 16px !important;
+  }
+
+  /* Remove any fixed widths that could cause overflow */
+  .container, .wrapper {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Page loader overlay CSS logic and cross-fade animations */
+.page-loader {
+  display: none;
+}
+html.two-pi-r-loading .page-loader {
+  display: flex !important;
+}
+html.two-pi-r-loading .min-h-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+.min-h-screen {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+/* Premium Typography Rules: Manrope overrides */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-manrope), sans-serif !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+}
+
+/* Large headings letter spacing */
+h1, h2, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl, .text-7xl {
+  letter-spacing: -0.03em !important;
+}
+
+/* Paragraphs & body copy default rules */
+p, .font-body {
+  font-family: var(--font-manrope), sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+}
+
+/* Prevent text touching edges on mobile viewport */
+@media (max-width: 767px) {
+  p, h1, h2, h3, h4, h5, h6, div, section {
+    box-sizing: border-box;
+  }
+}
+
+
+
