@@ -89,6 +89,8 @@ const ALL_REVIEWS = [
 
 const RATINGS_BREAKDOWN = [
   { rating: 5, percent: "82%", count: 1143 },
+  { rating: 5, percent: "92%", count: 1193},
+  { rating: 4.7, percent: "52%", count: 43},
   { rating: 4, percent: "12%", count: 167 },
   { rating: 3, percent: "4%", count: 56 },
   { rating: 2, percent: "1%", count: 14 },
