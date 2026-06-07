@@ -23,6 +23,13 @@ const ALL_REVIEWS = [
     date: "1 month ago"
   },
   {
+  stars: 5,
+    name: "Patrick",
+    role: "Tourist",
+    text: "One of the Must Visit Cafe in Our Jaipur... Lovely staff. Next level experience.",
+    date: "3 month ago"
+  },
+  {
     stars: 5,
     name: "Brahmdutt Sharma",
     role: "Local Guide (87 reviews)",
